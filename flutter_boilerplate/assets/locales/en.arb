@@ -1,0 +1,15 @@
+{
+  "@@locale": "en",
+  "title": "Flutter Boilerplate Demo",
+  "@title": {
+    "description": "The App Name"
+  },
+  "hello": "Hello, World!",
+  "@hello": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "changeLanguage": "Change Language",
+  "@changeLanguage": {
+    "description": "Change language"
+  }
+}
