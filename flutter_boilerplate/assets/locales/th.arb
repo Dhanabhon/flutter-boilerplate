@@ -1,16 +1,7 @@
 {
   "@@locale": "th",
   "title": "ตัวอย่าง Flutter Boilerplate",
-  "@title": {
-    "description": "The App Name"
-  },
   "hello": "สวัสดี, ชาวโลก!",
-  "@hello": {
-    "description": "The conventional newborn programmer greeting"
-  },
-  "changeLanguage": "เปลี่ยนภาษา",
-  "@changeLanguage": {
-    "description": "Change language"
-  }
+  "changeLanguage": "เปลี่ยนภาษา"
 }
   
