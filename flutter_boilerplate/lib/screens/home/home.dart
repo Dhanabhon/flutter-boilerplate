@@ -1,11 +1,45 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/config/logger.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final log = locator.get<AppLogger>();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.title),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              AppLocalizations.of(context)!.hello,
+              style: const TextStyle(fontSize: 24),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                log.debug("The change language button has been pressed!");
+              },
+              child: Text(
+                AppLocalizations.of(context)!.changeLanguage,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
