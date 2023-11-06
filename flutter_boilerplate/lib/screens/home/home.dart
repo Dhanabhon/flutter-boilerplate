@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
+import 'package:flutter_boilerplate/routes/routes.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,12 +34,14 @@ class HomePage extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 log.debug("The change language button has been pressed!");
+
+                context.go(AppRouter.settings);
               },
               child: Text(
                 AppLocalizations.of(context)!.changeLanguage,
               ),
             ),
-          )
+          ),
         ],
       ),
     );
