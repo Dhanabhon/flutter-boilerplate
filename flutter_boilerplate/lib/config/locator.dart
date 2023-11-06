@@ -8,6 +8,6 @@ import 'package:flutter_boilerplate/routes/routes.dart';
 final GetIt locator = GetIt.I;
 
 Future<void> setupLocator() async {
-  locator.registerSingleton<GoRouter>(appRoutes);
+  locator.registerLazySingleton<GoRouter>(() => AppRouter.router);
   locator.registerLazySingleton<AppLogger>(() => AppLogger());
 }
