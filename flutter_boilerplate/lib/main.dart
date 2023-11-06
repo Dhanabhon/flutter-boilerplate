@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/screens/home/home.dart';
+import 'package:flutter_boilerplate/routes/routes.dart';
 
 void main() {
   setupLocator();
@@ -21,12 +23,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<LanguageBloc>(create: (create) => LanguageBloc()),
       ],
-      child: const MaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Boilerplate Demo',
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: HomePage(),
+        routerConfig: AppRouter.router,
       ),
     );
   }
