@@ -2,6 +2,7 @@
   "@@locale": "th",
   "title": "ตัวอย่าง Flutter Boilerplate",
   "hello": "สวัสดี, ชาวโลก!",
-  "changeLanguage": "เปลี่ยนภาษา"
+  "changeLanguage": "เปลี่ยนภาษา",
+  "goBackHome": "กลับไปยังหน้าแรก"
 }
   
