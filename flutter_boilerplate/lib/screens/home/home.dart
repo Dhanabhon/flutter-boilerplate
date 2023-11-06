@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                 context.go(AppRouter.settings);
               },
               child: Text(
-                AppLocalizations.of(context)!.changeLanguage,
+                AppLocalizations.of(context)!.settings,
               ),
             ),
           ),
