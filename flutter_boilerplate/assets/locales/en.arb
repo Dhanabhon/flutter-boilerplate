@@ -2,7 +2,7 @@
   "@@locale": "en",
   "title": "Flutter Boilerplate Demo",
   "@title": {
-    "description": "The App Name"
+    "description": "Title text shown on the app"
   },
   "hello": "Hello, World!",
   "@hello": {
@@ -10,6 +10,10 @@
   },
   "changeLanguage": "Change Language",
   "@changeLanguage": {
-    "description": "Change language"
+    "description": "Button text to change language"
+  },
+  "goBackHome": "Go back home",
+  "@goBackHome": {
+    "description": "Button text to go back to home page"
   }
 }
