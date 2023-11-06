@@ -3,6 +3,7 @@
   "title": "ตัวอย่าง Flutter Boilerplate",
   "hello": "สวัสดี, ชาวโลก!",
   "changeLanguage": "เปลี่ยนภาษา",
-  "goBackHome": "กลับไปยังหน้าแรก"
+  "goBackHome": "กลับไปยังหน้าแรก",
+  "settings": "ตั้งค่า"
 }
   
