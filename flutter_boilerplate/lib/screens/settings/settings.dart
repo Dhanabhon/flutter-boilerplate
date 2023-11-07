@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+
+import 'package:go_router/go_router.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_boilerplate/routes/routes.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -20,12 +21,11 @@ class SettingsPage extends StatelessWidget {
         title: Text(AppLocalizations.of(context)!.settings),
       ),
       body: Center(
-          child: Column(
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           DropdownButton<Locale>(
-            value: l10n.lo,
             items: AppLocalizations.supportedLocales
                 .map<DropdownMenuItem<Locale>>((Locale value) {
               return DropdownMenuItem<Locale>(
@@ -44,7 +44,7 @@ class SettingsPage extends StatelessWidget {
             onPressed: () {
               log.debug("The go back to home button has been pressed!");
 
-              context.go(AppRouter.root);
+              context.go(Routes.rootPath);
             },
             child: Text(l10n!.goBackHome),
           ),
