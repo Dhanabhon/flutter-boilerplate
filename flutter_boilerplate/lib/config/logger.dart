@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:logger/logger.dart';
 
-class AppLogger {
+class AppLogger extends Logger {
   final _logger = Logger(
     filter: AppLogsFilter(),
     printer: PrefixPrinter(
