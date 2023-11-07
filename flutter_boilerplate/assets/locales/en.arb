@@ -19,5 +19,13 @@
   "settings": "Settings",
   "@settings": {
     "description": "Button or title text of settings"
+  },
+  "onboardingText": "Lorem Ipsum is simply dummy text",
+  "@onboardingText": {
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  "getStartedText": "Get Started",
+  "@getStartedText": {
+    "description": "Button text to get started"
   }
 }
