@@ -1,20 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/bloc/language/language_event.dart';
-import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  LanguageBloc() : super(LanguageState(Language.english)) {
-    loadSavedLanguage();
-    on<ChangedLanguage>(_onChangedLanguage as EventHandler<ChangedLanguage, LanguageState>);
-  }
+import 'package:flutter_boilerplate/bloc/language/language_event.dart';
+import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 
-  void loadSavedLanguage() {
-    // on<ChangedLanguage>(_onChangedLanguage);
+class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
+  LanguageBloc() : super(const LanguageState(Language.english)) {
+    on<ChangedLanguage>(_onChangedLanguage);
+    on<GetLanguage>(_onGetLanguage);
   }
 
   Future<void> _onChangedLanguage(
-      ChangedLanguage event, Emitter<Language> emit) async {
+      ChangedLanguage event, Emitter<LanguageState> emit) async {
     final prefs = await SharedPreferences.getInstance();
     final savedLanguage = prefs.getString('language');
 
@@ -23,8 +20,19 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
           savedLanguage == 'english' ? Language.english : Language.thai;
 
       saveLanguagePreference(language);
-      emit(language);
+      emit(state.copyWith(event.language));
     }
+  }
+
+  Future<void> _onGetLanguage(
+      GetLanguage event, Emitter<LanguageState> emit) async {
+    final prefs = await SharedPreferences.getInstance();
+    final language = prefs.getString('language');
+
+    emit(state.copyWith(
+      language != null ? 
+      Language.values
+      .where((item) => item.value.lan)));
   }
 
   Future<void> saveLanguagePreference(Language language) async {
