@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
 
 class LanguageModel {
-  
   final Locale locale;
   final AssetGenImage image;
   final String name;
@@ -20,4 +19,6 @@ class LanguageModel {
       locale: const Locale('th', 'TH'),
       image: Assets.images.flags.thailand,
       name: 'ภาษาไทย');
+
+  static List<LanguageModel> values = [english, thai];
 }
