@@ -9,6 +9,7 @@ import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
   runApp(const MyApp());
 }
