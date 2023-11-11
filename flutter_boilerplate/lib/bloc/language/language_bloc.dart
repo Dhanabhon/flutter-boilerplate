@@ -1,4 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter_boilerplate/bloc/language/language_event.dart';
@@ -12,8 +14,12 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
 
   Future<void> _onChangedLanguage(
       ChangedLanguage event, Emitter<LanguageState> emit) async {
-    final prefs = await SharedPreferences.getInstance();
-    final savedLanguage = prefs.getString('language');
+    // final prefs = await SharedPreferences.getInstance();
+    // final savedLanguage = prefs.getString('language');
+
+    // final prefs = await LocalStorageService.getInstance();
+    final prefs = locator.get<LocalStorageService>();
+
 
     if (savedLanguage != null) {
       final language =
