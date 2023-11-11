@@ -36,7 +36,7 @@ class OnboardingPage extends StatelessWidget {
                   ClipOval(
                     child: BlocBuilder<LanguageBloc, LanguageState>(
                       builder: (context, state) {
-                        return state.language.i
+                        return state.language.
                       },
                     ),
                   ),
