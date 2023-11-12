@@ -16,7 +16,7 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 ```
     git clone https://github.com/Dhanabhon/flutter-boilerplate.git
 ```
-**Step 2: Go to root project**
+**Step 2: Navigate to flutter project**
 ```
     cd flutter-boilerplate
 ```
