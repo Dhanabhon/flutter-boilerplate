@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
-
+import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -13,6 +16,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final log = locator.get<AppLogger>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -24,7 +28,11 @@ class OnboardingPage extends StatelessWidget {
               vertical: 8.0,
             ),
             child: OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                // TODO:
+                log.debug(
+                    '[OnboardingPage]: Change language button has been tapped!');
+              },
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.all(8.0),
                 foregroundColor: Colors.grey[100],
@@ -76,7 +84,10 @@ class OnboardingPage extends StatelessWidget {
                     height: 32.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      log.debug(
+                          '[OnboardingPage]: Get Started Button has been tapped!');
+                    },
                     child: Text(l10n.getStartedText),
                   )
                 ],
