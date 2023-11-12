@@ -6,6 +6,7 @@
   "goBackHome": "กลับไปยังหน้าแรก",
   "settings": "ตั้งค่า",
   "onboardingText": "Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบ ๆ",
-  "getStartedText": "เริ่มต้นใช้งาน"
+  "getStartedText": "เริ่มต้นใช้งาน",
+  "chooseLanguage": "เลือกภาษา"
 }
   
