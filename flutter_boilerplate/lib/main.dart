@@ -33,8 +33,6 @@ class MyApp extends StatelessWidget {
         BlocProvider<LanguageBloc>(create: (create) => LanguageBloc()),
         BlocProvider<ThemeBloc>(
             create: (context) => locator()..add(InitializedTheme())),
-
-        // TODO: Add BlocProvider
       ],
       child: BlocBuilder<ThemeBloc, ThemeData>(
         builder: (context, state) {
