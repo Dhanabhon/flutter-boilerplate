@@ -9,7 +9,7 @@ class LanguageState extends Equatable {
   @override
   List<Object?> get props => [language];
 
-  LanguageState copyWith(Language language, {Language? language}) {
-    return LanguageState(language ?? this.language);
+  Future<LanguageState> copyWith(Language language) async {
+    return LanguageState(language);
   }
 }
