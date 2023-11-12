@@ -21,7 +21,7 @@ class SettingsPage extends StatelessWidget {
         title: Text(AppLocalizations.of(context)!.settings),
       ),
       body: Center(
-        child: Column(
+          child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -33,9 +33,7 @@ class SettingsPage extends StatelessWidget {
                 child: Text(value.languageCode),
               );
             }).toList(),
-            onChanged: (locale) {
-
-            },
+            onChanged: (locale) {},
           ),
           const SizedBox(
             height: 16,
@@ -51,5 +49,14 @@ class SettingsPage extends StatelessWidget {
         ],
       )),
     );
+  }
+}
+
+class SettingsPace extends StatelessWidget {
+  const SettingsPace({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
