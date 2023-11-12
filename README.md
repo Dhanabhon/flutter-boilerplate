@@ -12,9 +12,17 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 ### Prerequisites
 
 ### Installation
-# Step 1: Clone this repo
+**Step 1: Clone this repo**
 ```
     git clone https://github.com/Dhanabhon/flutter-boilerplate.git
+```
+**Step 2: Go to root project**
+```
+    cd flutter-boilerplate
+```
+**Step 3: Execute the following command to get the requried dependencies**
+```
+    flutter pub get
 ```
 
 ## Roadmap
