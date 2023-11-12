@@ -1,3 +1,4 @@
+import 'package:flutter_boilerplate/bloc/theme/theme_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logger/logger.dart';
 import 'package:watch_it/watch_it.dart';
@@ -15,6 +16,10 @@ Future<void> setupLocator() async {
   locator.registerLazySingleton<GoRouter>(() => AppRouter.router);
   locator.registerLazySingleton<Logger>(() => AppLogger());
 
-  var instance = await LocalStorageService.getInstance();
-  locator.registerSingleton<LocalStorageService>(instance!);
+  // var instance = await LocalStorageService.getInstance();
+  // locator.registerSingleton<LocalStorageService>(instance!);
+
+  locator.registerSingleton<LocalStorageService>(LocalStorageService());
+  // locator.registerFactory<LocalStorageService>(() => LocalStorageService());
+  locator.registerFactory<ThemeBloc>(() => ThemeBloc());
 }
