@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/config/locator.dart';
-import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/bloc/language/language_event.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 
