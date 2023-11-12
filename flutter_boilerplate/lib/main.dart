@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/bloc/bloc_observer.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:flutter_boilerplate/bloc/bloc_observer.dart';
+import 'package:flutter_boilerplate/config/theme.dart';
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<LanguageBloc>(create: (create) => LanguageBloc()),
+        // TODO:
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
@@ -35,6 +37,9 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         routerConfig: AppRouter.router,
+        theme: CustomTheme.lightTheme,
+        darkTheme: CustomTheme.darkTheme,
+        themeMode: ThemeMode.system,
       ),
     );
   }
