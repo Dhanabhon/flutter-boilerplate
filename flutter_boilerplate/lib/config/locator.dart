@@ -14,12 +14,10 @@ final GetIt locator = GetIt.I;
 
 Future<void> setupLocator() async {
   locator.registerLazySingleton<GoRouter>(() => AppRouter.router);
-  locator.registerLazySingleton<Logger>(() => AppLogger());
 
-  // var instance = await LocalStorageService.getInstance();
-  // locator.registerSingleton<LocalStorageService>(instance!);
-
+  locator.registerSingleton<AppLogger>(AppLogger());
   locator.registerSingleton<LocalStorageService>(LocalStorageService());
+
   // locator.registerFactory<LocalStorageService>(() => LocalStorageService());
   locator.registerFactory<ThemeBloc>(() => ThemeBloc());
 }
