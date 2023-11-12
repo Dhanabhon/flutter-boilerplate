@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/bloc/bloc_observer.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -8,10 +9,15 @@ import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setupLocator();
+  initializeApp();
   runApp(const MyApp());
+}
+
+void initializeApp() {
+  setupLocator();
+  Bloc.observer = AppBlocServer();
 }
 
 class MyApp extends StatelessWidget {
