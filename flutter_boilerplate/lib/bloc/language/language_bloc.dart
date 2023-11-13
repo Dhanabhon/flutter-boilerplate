@@ -1,12 +1,15 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:flutter_boilerplate/bloc/language/language_event.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
+  final log = locator.get<AppLogger>();
+
   LanguageBloc() : super(const LanguageState(Language.english)) {
     on<ChangedLanguage>(_onChangedLanguage);
   }
@@ -18,6 +21,9 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     if (savedLanguage != null) {
       final language =
           savedLanguage == 'english' ? Language.english : Language.thai;
+
+      log.debug(
+          '[language_bloc.dart][_onChangedLanguage]: Saved language: ${language.name}');
 
       saveLanguagePreference(language);
       emit(state);
