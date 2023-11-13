@@ -79,7 +79,11 @@ class OnboardingPage extends StatelessWidget {
                 children: [
                   Text(
                     l10n.onboardingText,
-                    style: Theme.of(context).textTheme.displaySmall,
+                    style: TextStyle(
+                      color: const Color(0xFF486284),
+                      fontSize:
+                          Theme.of(context).textTheme.displaySmall?.fontSize,
+                    ),
                   ),
                   const SizedBox(
                     height: 32.0,
@@ -118,7 +122,10 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Text(
                 l10n.chooseLanguage,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: TextStyle(
+                  color: const Color(0xFF486284),
+                  fontSize: Theme.of(context).textTheme.headlineSmall?.fontSize,
+                ),
               ),
               const SizedBox(height: 16.0),
               BlocBuilder<LanguageBloc, LanguageState>(
@@ -147,14 +154,14 @@ class OnboardingPage extends StatelessWidget {
                         ),
                         trailing: Language.values[index] == state.language
                             ? const Icon(Icons.check_circle_outline_rounded,
-                                color: Colors.redAccent)
+                                color: Color(0xFF486284))
                             : null,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                           side: Language.values[index] == state.language
                               ? const BorderSide(
-                                  color: Colors.redAccent, width: 1.5)
-                              : BorderSide(color: Colors.grey[300]!),
+                                  color: Color(0xFF486284), width: 1.5)
+                              : const BorderSide(color: Color(0xFFD9D9D9)),
                         ),
                       );
                     },
