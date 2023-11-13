@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
+import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:flutter_boilerplate/bloc/language/language_event.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
@@ -48,7 +49,7 @@ class OnboardingPage extends StatelessWidget {
                   ClipOval(
                     child: BlocBuilder<LanguageBloc, LanguageState>(
                       builder: (context, state) {
-                        return state.language == Language.english
+                        return state.selectedLanguage == Language.english
                             ? Assets.images.flags.unitedStatesOfAmerica.image()
                             : Assets.images.flags.thailand.image();
                       },
@@ -100,6 +101,10 @@ class OnboardingPage extends StatelessWidget {
               onPressed: () {
                 log.debug(
                     '[onboarding.dart]: Get Started Button has been pressed!');
+
+                // TODO: Save the get started status into local storage
+
+                context.go(Routes.rootPath);
               },
               child: Text(l10n.getStartedText),
             )
@@ -142,9 +147,10 @@ class OnboardingPage extends StatelessWidget {
                         title: Text(Language.values[index].name == "english"
                             ? "English"
                             : "ภาษาไทย"),
-                        tileColor: Language.values[index] == state.language
-                            ? Colors.grey[400]?.withOpacity(0.05)
-                            : null,
+                        tileColor:
+                            Language.values[index] == state.selectedLanguage
+                                ? Colors.grey[400]?.withOpacity(0.05)
+                                : null,
                         onTap: () {
                           log.debug(
                               '[onboarding.dart][showModalBottomSheet]: Item has been tapped!');
@@ -162,13 +168,14 @@ class OnboardingPage extends StatelessWidget {
                               : Assets.images.flags.thailand
                                   .image(height: 32.0, width: 32.0),
                         ),
-                        trailing: Language.values[index] == state.language
-                            ? const Icon(Icons.check_circle_outline_rounded,
-                                color: Color(0xFF486284))
-                            : null,
+                        trailing:
+                            Language.values[index] == state.selectedLanguage
+                                ? const Icon(Icons.check_circle_outline_rounded,
+                                    color: Color(0xFF486284))
+                                : null,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
-                          side: Language.values[index] == state.language
+                          side: Language.values[index] == state.selectedLanguage
                               ? const BorderSide(
                                   color: Color(0xFF486284), width: 1.5)
                               : const BorderSide(color: Color(0xFFD9D9D9)),
