@@ -67,11 +67,14 @@ class OnboardingPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              child: Assets.images.mockup.image457x344.image(
-                width: 400,
-                height: 400,
-                fit: BoxFit.scaleDown,
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+              child: Container(
+                child: Assets.images.mockup.image457x344.image(
+                  width: 400,
+                  height: 400,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
             Padding(
