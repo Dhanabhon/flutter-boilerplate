@@ -1,3 +1,4 @@
+import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:watch_it/watch_it.dart';
 
@@ -18,4 +19,5 @@ Future<void> setupLocator() async {
   locator.registerSingleton<LocalStorageService>(LocalStorageService());
 
   locator.registerFactory<ThemeBloc>(() => ThemeBloc());
+  locator.registerFactory<LanguageBloc>(() => LanguageBloc());
 }
