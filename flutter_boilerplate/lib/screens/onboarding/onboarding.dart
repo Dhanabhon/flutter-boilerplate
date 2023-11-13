@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import 'package:flutter_boilerplate/gen/assets.gen.dart';
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
+import 'package:flutter_boilerplate/bloc/language/language_event.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
-import 'package:flutter_boilerplate/gen/assets.gen.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -30,7 +32,7 @@ class OnboardingPage extends StatelessWidget {
             child: OutlinedButton(
               onPressed: () {
                 log.debug(
-                    '[OnboardingPage]: Change language button has been pressed!');
+                    '[onboarding.dart]: Change language button has been pressed!');
 
                 showLanguageBottomSheet(context);
               },
@@ -55,7 +57,7 @@ class OnboardingPage extends StatelessWidget {
                   Icon(
                     Icons.arrow_drop_down_rounded,
                     color: Colors.grey[400],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -65,10 +67,10 @@ class OnboardingPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(
+            Container(
               child: Assets.images.mockup.image457x344.image(
-                width: 256,
-                height: 256,
+                width: 400,
+                height: 400,
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -94,7 +96,7 @@ class OnboardingPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 log.debug(
-                    '[OnboardingPage]: Get Started Button has been pressed!');
+                    '[onboarding.dart]: Get Started Button has been pressed!');
               },
               child: Text(l10n.getStartedText),
             )
@@ -142,8 +144,13 @@ class OnboardingPage extends StatelessWidget {
                             : null,
                         onTap: () {
                           log.debug(
-                              '[OnboardingPage][showModalBottomSheet]: Item has been tapped!');
-                          // TODO:
+                              '[onboarding.dart][showModalBottomSheet]: Item has been tapped!');
+
+                          context.read<LanguageBloc>().add(ChangedLanguage(
+                              language: Language.values[index]));
+
+                          Future.delayed(const Duration(milliseconds: 300))
+                              .then((value) => context.pop());
                         },
                         leading: ClipOval(
                           child: Language.values[index].name == "english"
