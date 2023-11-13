@@ -30,4 +30,8 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 
 ## Roadmap
 
+## Credits
+- [Bank of america icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/bank-of-america)
+- [Thailand icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/thailand)
+
 ### Note: This repository is under development.
