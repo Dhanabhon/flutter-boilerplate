@@ -19,6 +19,12 @@ class AppBlocServer extends BlocObserver {
   }
 
   @override
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    log.debug('[bloc_observer.dart][onTransition]: ${bloc.runtimeType}, $transition');
+  }
+
+  @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
     super.onError(bloc, error, stackTrace);
     log.debug('[bloc_observer.dart][onError]: ${bloc.runtimeType}, $error');
