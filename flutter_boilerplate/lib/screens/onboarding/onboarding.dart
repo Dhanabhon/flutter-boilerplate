@@ -153,10 +153,10 @@ class OnboardingPage extends StatelessWidget {
                                 : null,
                         onTap: () {
                           log.debug(
-                              '[onboarding.dart][showModalBottomSheet]: Item has been tapped!');
+                              '[onboarding.dart][showModalBottomSheet]: Selected item: ${Language.values[index].name}');
 
                           context.read<LanguageBloc>().add(ChangedLanguage(
-                              language: Language.values[index]));
+                              selectedLanguage: Language.values[index]));
 
                           Future.delayed(const Duration(milliseconds: 300))
                               .then((value) => context.pop());
