@@ -1,6 +1,6 @@
-# flutter_boilerplate
+# Flutter Boilerplate
 
-A new Flutter project.
+A simple boilerplate project that adopts the concepts of simple architecture and modularization.
 
 ## Getting Started
 
