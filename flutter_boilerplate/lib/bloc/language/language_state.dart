@@ -3,13 +3,16 @@ import 'package:equatable/equatable.dart';
 enum Language { english, thai }
 
 class LanguageState extends Equatable {
+  const LanguageState({Language? selectedLanguage})
+      : selectedLanguage = selectedLanguage ?? Language.english;
+
   final Language selectedLanguage;
-  const LanguageState(this.selectedLanguage);
 
   @override
   List<Object?> get props => [selectedLanguage];
 
-  Future<LanguageState> copyWith(Language language) async {
-    return LanguageState(language);
+  LanguageState copyWith({Language? selectedLanguage}) {
+    return LanguageState(
+        selectedLanguage: selectedLanguage ?? this.selectedLanguage);
   }
 }

@@ -8,26 +8,21 @@ import 'package:flutter_boilerplate/bloc/language/language_event.dart';
 import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  final log = locator.get<AppLogger>();
-
-  LanguageBloc() : super(const LanguageState(Language.english)) {
+  LanguageBloc() : super(const LanguageState()) {
     on<ChangedLanguage>(_onChangedLanguage);
   }
 
+  final log = locator.get<AppLogger>();
+
   Future<void> _onChangedLanguage(
       ChangedLanguage event, Emitter<LanguageState> emit) async {
-    final savedLanguage = await getLanguagePreference();
+    final currentLanguage = event.selectedLanguage;
 
-    if (savedLanguage != null) {
-      final language =
-          savedLanguage == 'english' ? Language.english : Language.thai;
+    log.debug(
+        '[language_bloc.dart][_onChangedLanguage]: Saved language: ${currentLanguage.name}');
 
-      log.debug(
-          '[language_bloc.dart][_onChangedLanguage]: Saved language: ${language.name}');
-
-      saveLanguagePreference(language);
-      emit(state);
-    }
+    await saveLanguagePreference(currentLanguage);
+    emit(state.copyWith(selectedLanguage: currentLanguage));
   }
 
   Future<String?> getLanguagePreference() async {
