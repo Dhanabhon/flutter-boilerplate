@@ -9,7 +9,7 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 
 ## Getting Started
 
-### Prerequisites
+### Folder Structure
 
 ### Installation
 **Step 1: Clone this repo**
