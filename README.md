@@ -10,6 +10,84 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 ## Getting Started
 
 ### Folder Structure
+```
+project_name/
+  ├── lib/
+  │   ├── blocs/
+  │   │   ├── language/
+  │   │   │   ├── language_bloc.dart
+  │   │   │   ├── language_event.dart
+  │   │   │   ├── language_state.dart
+  │   │   ├── theme/
+  │   │   │   ├── theme_bloc.dart
+  │   │   │   ├── theme_event.dart
+  │   │   ├── bloc_observer.dart     
+  │   ├── screens/
+  │   │   ├── home/
+  │   │   │   ├── home_screen.dart
+  │   │   │   └── widgets/
+  │   │   │       ├── home_widget1.dart
+  │   │   │       ├── home_widget2.dart
+  │   │   │       └── ...
+  │   │   ├── profile/
+  │   │   │   ├── profile_screen.dart
+  │   │   │   └── widgets/
+  │   │   │       ├── profile_widget1.dart
+  │   │   │       ├── profile_widget2.dart
+  │   │   │       └── ...
+  │   │   └── ...
+  │   ├── models/
+  │   │   ├── user.dart
+  │   │   ├── product.dart
+  │   │   └── ...
+  │   ├── services/
+  │   │   ├── api_service.dart
+  │   │   ├── database_service.dart
+  │   │   └── ...
+  │   ├── utils/
+  │   │   ├── constants.dart
+  │   │   ├── helpers.dart
+  │   │   └── ...
+  │   ├── widgets/
+  │   │   ├── custom_button.dart
+  │   │   ├── custom_textfield.dart
+  │   │   └── ...
+  │   └── main.dart
+  ├── assets/
+  │   ├── images/
+  │   │   ├── image1.png
+  │   │   ├── image2.png
+  │   │   └── ...
+  │   ├── fonts/
+  │   │   ├── font1.ttf
+  │   │   ├── font2.ttf
+  │   │   └── ...
+  │   └── ...
+  ├── test/
+  │   ├── unit/
+  │   ├── widget/
+  │   └── ...
+  ├── android/
+  ├── ios/
+  ├── web/
+  ├── pubspec.yaml
+  └── README.md
+```
+
+Explanation of the folder structure:
+1. lib: This is where your Dart code resides.
+    - main.dart: The entry point of the Flutter app.
+    - secreen: Each screen of the app has its own folder with its corresponding widgets.
+    - models: Define the data models here.
+    - services: Place API calls and other data-related services here.
+    - utils: Utility functions, constants, and helpers.
+    - widgets: Reusable widgets that are used across different screens.
+2. assets: Store the static assets like images, fonts, and ARB files here.
+3. test: Contains unit and widget tests for your app.
+4. android and ios: Native code for Android and iOS, respectively. Flutter uses these folders to build your app for each platform.
+5. web: If you're targeting the web, you'll find web-specific configurations here.
+6. pubspec.yaml: Dependency management and project configuration file.
+7. README.md: Documentation for the project. 
 
 ### Installation
 **Step 1: Clone this repo**
