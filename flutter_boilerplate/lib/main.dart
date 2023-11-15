@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LanguageBloc>(create: (context) => LanguageBloc()),
+        BlocProvider<LanguageBloc>(
+            create: (context) => locator<LanguageBloc>()),
         BlocProvider<ThemeBloc>(
             create: (context) => locator()..add(InitializedTheme())),
       ],
