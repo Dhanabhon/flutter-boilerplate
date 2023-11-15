@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:flutter_boilerplate/bloc/language/language_state.dart';
+import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 
 abstract class LanguageEvent extends Equatable {
   const LanguageEvent();

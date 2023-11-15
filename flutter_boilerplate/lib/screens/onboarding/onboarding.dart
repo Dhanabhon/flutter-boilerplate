@@ -6,9 +6,9 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
-import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
-import 'package:flutter_boilerplate/bloc/language/language_event.dart';
-import 'package:flutter_boilerplate/bloc/language/language_state.dart';
+import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
+import 'package:flutter_boilerplate/blocs/language/language_event.dart';
+import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
 

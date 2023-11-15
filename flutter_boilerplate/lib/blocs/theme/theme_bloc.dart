@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_boilerplate/bloc/theme/theme_event.dart';
+import 'package:flutter_boilerplate/blocs/theme/theme_event.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/config/theme.dart';

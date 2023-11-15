@@ -4,8 +4,8 @@ import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/utils/constants.dart';
-import 'package:flutter_boilerplate/bloc/language/language_event.dart';
-import 'package:flutter_boilerplate/bloc/language/language_state.dart';
+import 'package:flutter_boilerplate/blocs/language/language_event.dart';
+import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   LanguageBloc() : super(const LanguageState()) {

@@ -7,11 +7,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_boilerplate/config/theme.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
-import 'package:flutter_boilerplate/bloc/bloc_observer.dart';
-import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
-import 'package:flutter_boilerplate/bloc/language/language_state.dart';
-import 'package:flutter_boilerplate/bloc/theme/theme_bloc.dart';
-import 'package:flutter_boilerplate/bloc/theme/theme_event.dart';
+import 'package:flutter_boilerplate/blocs/bloc_observer.dart';
+import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
+import 'package:flutter_boilerplate/blocs/language/language_state.dart';
+import 'package:flutter_boilerplate/blocs/theme/theme_bloc.dart';
+import 'package:flutter_boilerplate/blocs/theme/theme_event.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
