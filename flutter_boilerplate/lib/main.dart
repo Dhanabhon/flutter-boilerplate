@@ -9,6 +9,7 @@ import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/bloc/bloc_observer.dart';
 import 'package:flutter_boilerplate/bloc/language/language_bloc.dart';
+import 'package:flutter_boilerplate/bloc/language/language_state.dart';
 import 'package:flutter_boilerplate/bloc/theme/theme_bloc.dart';
 import 'package:flutter_boilerplate/bloc/theme/theme_event.dart';
 
@@ -30,21 +31,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LanguageBloc>(create: (create) => LanguageBloc()),
+        BlocProvider<LanguageBloc>(create: (context) => LanguageBloc()),
         BlocProvider<ThemeBloc>(
             create: (context) => locator()..add(InitializedTheme())),
       ],
       child: BlocBuilder<ThemeBloc, ThemeData>(
-        builder: (context, state) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            title: 'Flutter Boilerplate Demo',
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            routerConfig: AppRouter.router,
-            theme: state,
-            darkTheme: CustomTheme.darkTheme,
-            themeMode: ThemeMode.system,
+        builder: (themeContext, themeState) {
+          return BlocBuilder<LanguageBloc, LanguageState>(
+            builder: (languageContext, languageState) {
+              return MaterialApp.router(
+                debugShowCheckedModeBanner: false,
+                title: 'Flutter Boilerplate Demo',
+                locale: languageState.selectedLanguage.name == 'english'
+                    ? const Locale('en')
+                    : const Locale('th'),
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                supportedLocales: AppLocalizations.supportedLocales,
+                routerConfig: AppRouter.router,
+                theme: themeState,
+                darkTheme: CustomTheme.darkTheme,
+                themeMode: ThemeMode.system,
+              );
+            },
           );
         },
       ),
