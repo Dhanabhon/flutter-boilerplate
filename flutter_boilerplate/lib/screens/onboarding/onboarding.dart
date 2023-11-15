@@ -88,7 +88,7 @@ class OnboardingPage extends StatelessWidget {
                     style: TextStyle(
                       color: const Color(0xFF486284),
                       fontSize:
-                          Theme.of(context).textTheme.displaySmall?.fontSize,
+                          Theme.of(context).textTheme.headlineLarge?.fontSize,
                     ),
                   ),
                   const SizedBox(
@@ -125,22 +125,23 @@ class OnboardingPage extends StatelessWidget {
             topLeft: Radius.circular(12.0), topRight: Radius.circular(12.0)),
       ),
       builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                l10n.chooseLanguage,
-                style: TextStyle(
-                  color: const Color(0xFF486284),
-                  fontSize: Theme.of(context).textTheme.headlineSmall?.fontSize,
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              BlocBuilder<LanguageBloc, LanguageState>(
-                builder: (context, state) {
-                  return ListView.separated(
+        return BlocBuilder<LanguageBloc, LanguageState>(
+          builder: (context, state) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    l10n.chooseLanguage,
+                    style: TextStyle(
+                      color: const Color(0xFF486284),
+                      fontSize:
+                          Theme.of(context).textTheme.headlineSmall?.fontSize,
+                    ),
+                  ),
+                  const SizedBox(height: 16.0),
+                  ListView.separated(
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return ListTile(
@@ -186,11 +187,11 @@ class OnboardingPage extends StatelessWidget {
                       return const SizedBox(height: 16.0);
                     },
                     itemCount: Language.values.length,
-                  );
-                },
-              )
-            ],
-          ),
+                  ),
+                ],
+              ),
+            );
+          },
         );
       },
     );
