@@ -109,7 +109,10 @@ Explanation of the folder structure:
 ## Adding translation file
 Flutter localization uses ARB (Application Resource Bundle) files for translations.
 - Create the template ARB file, assets/locales/LANGUAGE_CODE.arb
-- The tool that generates the localizations class will execute automatically each time the application is run or restarted as part of the build process.
+- The tool that generates the localizations class will execute automatically each time the application is run or restarted as part of the build process or force execute for generate use this command:
+```
+    dart run build_runner build
+```
 
 Note: Filenames for all arb files cannot contain underscores other than for describing the locale. The internationalization tool uses underscores to parse out the language, country, and script codes for each ARB file.
 
