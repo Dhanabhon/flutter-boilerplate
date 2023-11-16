@@ -50,7 +50,7 @@ class OnboardingPage extends StatelessWidget {
                     child: BlocBuilder<LanguageBloc, LanguageState>(
                       builder: (context, state) {
                         return state.selectedLanguage == Language.english
-                            ? Assets.images.flags.unitedStatesOfAmerica.image()
+                            ? Assets.images.flags.unitedStates.image()
                             : Assets.images.flags.thailand.image();
                       },
                     ),
@@ -164,7 +164,7 @@ class OnboardingPage extends StatelessWidget {
                         },
                         leading: ClipOval(
                           child: Language.values[index].name == "english"
-                              ? Assets.images.flags.unitedStatesOfAmerica
+                              ? Assets.images.flags.unitedStates
                                   .image(height: 32.0, width: 32.0)
                               : Assets.images.flags.thailand
                                   .image(height: 32.0, width: 32.0),
