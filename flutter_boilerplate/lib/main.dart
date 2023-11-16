@@ -12,6 +12,7 @@ import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_bloc.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_event.dart';
+import 'package:flutter_boilerplate/utils/locale_resolution.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
               return MaterialApp.router(
                 debugShowCheckedModeBanner: false,
                 title: 'Flutter Boilerplate Demo',
+                localeListResolutionCallback: localeResolution,
                 locale: languageState.selectedLanguage.name == 'english'
                     ? const Locale('en')
                     : const Locale('th'),
