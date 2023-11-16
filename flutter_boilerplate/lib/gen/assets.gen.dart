@@ -36,12 +36,12 @@ class $AssetsImagesFlagsGen {
   AssetGenImage get thailand =>
       const AssetGenImage('assets/images/flags/thailand.png');
 
-  /// File path: assets/images/flags/united-states-of-america.png
-  AssetGenImage get unitedStatesOfAmerica =>
-      const AssetGenImage('assets/images/flags/united-states-of-america.png');
+  /// File path: assets/images/flags/united-states.png
+  AssetGenImage get unitedStates =>
+      const AssetGenImage('assets/images/flags/united-states.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [thailand, unitedStatesOfAmerica];
+  List<AssetGenImage> get values => [thailand, unitedStates];
 }
 
 class $AssetsImagesMockupGen {
