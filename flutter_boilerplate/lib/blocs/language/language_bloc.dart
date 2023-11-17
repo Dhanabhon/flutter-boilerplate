@@ -19,17 +19,11 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     final currentLanguage = event.selectedLanguage;
     final previousLanguage = await getLanguagePreference();
 
-    // log.debug(
-    //     '[language_bloc.dart][_onChangedLanguage]: Previous language: ${previousLanguage.toString()}');
-
-    // if (currentLanguage == previousLanguage) {
-    //   log.debug(
-    //       '[language_bloc.dart][_onChangedLanguage]: Previous language: ${currentLanguage.name}');
-    //   return;
-    // }
-
-    // log.debug(
-    //     '[language_bloc.dart][_onChangedLanguage]: Saved language: ${currentLanguage.name}');
+    if (currentLanguage == previousLanguage) {
+      log.debug(
+          '[language_bloc.dart][_onChangedLanguage]: The current language is the same as the previous language.');
+      return;
+    }
 
     await saveLanguagePreference(currentLanguage);
     emit(state.copyWith(selectedLanguage: currentLanguage));
