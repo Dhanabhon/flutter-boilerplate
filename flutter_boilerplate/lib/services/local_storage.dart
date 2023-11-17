@@ -49,7 +49,8 @@ class LocalStorageService {
   }
 
   Future<void> deleteAllDataInStorage() async {
-    await _preferences?.deleteAll();
+    FlutterSecureStorage? prefs = await getInstance();
+    await prefs?.deleteAll();
 
     log.debug('[local_storage.dart][deleteAllDataInStorage]: Delete all data.');
   }
