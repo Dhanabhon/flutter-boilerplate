@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_boilerplate/config/locator.dart';
@@ -10,6 +12,7 @@ import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   LanguageBloc() : super(const LanguageState()) {
     on<ChangedLanguage>(_onChangedLanguage);
+    on<GetLanguage>(_onGetLanguage);
   }
 
   final log = locator.get<AppLogger>();
@@ -29,6 +32,21 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     emit(state.copyWith(selectedLanguage: currentLanguage));
   }
 
+  Future<void> _onGetLanguage(
+      GetLanguage event, Emitter<LanguageState> emit) async {
+    final prefs = locator.get<LocalStorageService>();
+    String? language =
+        await prefs.readDataFromStorage(key: LocalStorageKey.language);
+
+    Language savedLanguage =
+        (language == 'english') ? Language.english : Language.thai;
+
+    emit(state.copyWith(
+        selectedLanguage: language != null
+            ? Language.values.where((item) => item == savedLanguage).first
+            : Language.english));
+  }
+
   Future<Language?> getLanguagePreference() async {
     final prefs = locator.get<LocalStorageService>();
     String? language =
@@ -46,8 +64,5 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     await prefs.saveDataToStorage(
         key: LocalStorageKey.language,
         value: language == Language.english ? 'english' : 'thai');
-
-    // log.debug(
-    //     '[language_bloc.dart][saveLanguagePreference]: Language: ${language.name}');
   }
 }
