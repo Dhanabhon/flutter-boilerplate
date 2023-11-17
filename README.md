@@ -1,7 +1,9 @@
 # Flutter Boilerplate
+
 A simple boilerplate project that adopts the concepts of simple architecture and modularization.
 
 ## Features
+
 - Localization
 - Routing
 - Themes
@@ -10,6 +12,7 @@ A simple boilerplate project that adopts the concepts of simple architecture and
 ## Getting Started
 
 ### Folder Structure
+
 ```
 project_name/
   ├── lib/
@@ -75,6 +78,7 @@ project_name/
 ```
 
 Explanation of the folder structure:
+
 1. lib: This is where your Dart code resides.
     - main.dart: The entry point of the Flutter app.
     - secreen: Each screen of the app has its own folder with its corresponding widgets.
@@ -90,6 +94,7 @@ Explanation of the folder structure:
 7. README.md: Documentation for the project. 
 
 ### Installation
+
 **Step 1: Clone this repo**
 ```
     git clone https://github.com/Dhanabhon/flutter-boilerplate.git
@@ -103,13 +108,17 @@ Explanation of the folder structure:
     flutter pub get
 ```
 **Step 4 (Optional): If you want to change the app name, try to use the following dependency:**
+
 - [rename](https://pub.dev/packages/rename)
 - [change_app_package_name](https://pub.dev/packages/change_app_package_name)
 
 ## Adding translation file
+
 Flutter localization uses ARB (Application Resource Bundle) files for translations.
+
 - Create the template ARB file, assets/locales/LANGUAGE_CODE.arb
 - The tool that generates the localizations class will execute automatically each time the application is run or restarted as part of the build process or force execute for generate use this command:
+
 ```
     dart run build_runner build
 ```
@@ -117,6 +126,7 @@ Flutter localization uses ARB (Application Resource Bundle) files for translatio
 Note: Filenames for all arb files cannot contain underscores other than for describing the locale. The internationalization tool uses underscores to parse out the language, country, and script codes for each ARB file.
 
 ## Credits
+
 - [Bank of america icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/bank-of-america)
 - [Thailand icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/thailand)
 
