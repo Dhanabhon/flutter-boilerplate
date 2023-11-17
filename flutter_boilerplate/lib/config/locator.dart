@@ -16,8 +16,8 @@ Future<void> setupLocator() async {
   locator.registerLazySingleton<GoRouter>(() => AppRouter.router);
 
   locator.registerSingleton<AppLogger>(AppLogger());
-  locator.registerSingleton<LocalStorageService>(LocalStorageService());
-
+  
+  locator.registerFactory<LocalStorageService>(() => LocalStorageService());
   locator.registerFactory<ThemeBloc>(() => ThemeBloc());
   locator.registerFactory<LanguageBloc>(() => LanguageBloc());
 }
