@@ -25,7 +25,7 @@ class LocalStorageService {
   Future<void> saveDataToStorage({required String key, String? value}) async {
     FlutterSecureStorage? prefs = await getInstance();
     await prefs?.write(key: key, value: value);
-
+    
     log.debug(
         '[local_storage.dart][saveDataToStorage]: Key: {$key}, Value: {$value}');
   }
