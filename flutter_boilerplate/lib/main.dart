@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/blocs/language/language_event.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -14,7 +13,7 @@ import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_bloc.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_event.dart';
 import 'package:flutter_boilerplate/utils/locale_resolution.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_boilerplate/blocs/language/language_event.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
