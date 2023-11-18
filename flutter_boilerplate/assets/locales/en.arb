@@ -28,8 +28,8 @@
   "@getStartedText": {
     "description": "Button text to get started"
   },
-  "chooseLanguage": "Choose Language",
-  "@chooseLanguage": {
+  "preferredLanguage": "Preferred Language",
+  "@preferredLanguage": {
     "description": "Title text of bottom sheet"
   }
 }
