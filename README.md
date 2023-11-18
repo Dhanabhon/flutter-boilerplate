@@ -4,6 +4,7 @@ A simple boilerplate project that adopts the concepts of simple architecture, mo
 
 ## Key Features
 
+* [x] Material 3 Design (As of the Flutter 3.16 release, Material 3 is enabled by default.)
 * [x] State Management (BLoC)
 * [x] Localization (English and Thai)
 * [x] Routing
