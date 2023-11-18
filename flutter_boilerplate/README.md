@@ -1,6 +1,6 @@
 # Flutter Boilerplate
 
-A simple boilerplate project that adopts the concepts of simple architecture and modularization.
+A simple boilerplate project that adopts the concepts of simple architecture, modularization, and lightweight.
 
 ## Getting Started
 
