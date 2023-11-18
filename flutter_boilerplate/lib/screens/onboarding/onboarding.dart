@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/widgets/custom_elevated_button.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -91,23 +92,23 @@ class OnboardingPage extends StatelessWidget {
                           Theme.of(context).textTheme.headlineLarge?.fontSize,
                     ),
                   ),
-                  const SizedBox(
-                    height: 32.0,
-                  ),
                 ],
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                log.debug(
-                    '[onboarding.dart]: Get Started Button has been pressed!');
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CustomElevatedButton(
+                onPressed: () {
+                  log.debug(
+                      '[onboarding.dart]: Get Started Button has been pressed!');
 
-                // TODO: Save the get started status into local storage
+                  // TODO: Save the get started status into local storage
 
-                context.go(Routes.rootPath);
-              },
-              child: Text(l10n.getStartedText),
-            )
+                  // context.go(Routes.rootPath);
+                },
+                text: l10n.getStartedText,
+              ),
+            ),
           ],
         ),
       ),
@@ -133,7 +134,7 @@ class OnboardingPage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    l10n.chooseLanguage,
+                    l10n.preferredLanguage,
                     style: TextStyle(
                       color: const Color(0xFF486284),
                       fontSize:
