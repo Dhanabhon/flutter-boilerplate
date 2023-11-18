@@ -2,14 +2,15 @@
 
 A simple boilerplate project that adopts the concepts of simple architecture and modularization.
 
-## Features
+## Key Features
 
-- Localization
-- Routing
-- Themes
-- Logging
-
-## Getting Started
+* [x] State Management (BLoC)
+* [x] Localization (English and Thai)
+* [x] Routing
+* [x] Logging
+* [ ] Theme Modes (Light and Dark)
+* [ ] Splash Screen
+* [ ] Permission Handling
 
 ### Folder Structure
 
