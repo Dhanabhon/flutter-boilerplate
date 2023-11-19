@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/widgets/custom_elevated_button.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+
+import 'package:flutter_boilerplate/widgets/custom_elevated_button.dart';
 import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 import 'package:flutter_boilerplate/blocs/language/language_event.dart';
 import 'package:flutter_boilerplate/blocs/language/language_state.dart';
@@ -18,6 +19,8 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: const Size(360, 690));
+
     final l10n = AppLocalizations.of(context)!;
     final log = locator.get<AppLogger>();
 
@@ -87,7 +90,6 @@ class OnboardingPage extends StatelessWidget {
                   Text(
                     l10n.onboardingText,
                     style: TextStyle(
-                      color: const Color(0xFF486284),
                       fontSize:
                           Theme.of(context).textTheme.headlineLarge?.fontSize,
                     ),
@@ -136,7 +138,6 @@ class OnboardingPage extends StatelessWidget {
                   Text(
                     l10n.preferredLanguage,
                     style: TextStyle(
-                      color: const Color(0xFF486284),
                       fontSize:
                           Theme.of(context).textTheme.headlineSmall?.fontSize,
                     ),
@@ -172,8 +173,7 @@ class OnboardingPage extends StatelessWidget {
                         ),
                         trailing:
                             Language.values[index] == state.selectedLanguage
-                                ? const Icon(Icons.check_circle_outline_rounded,
-                                    color: Color(0xFF486284))
+                                ? const Icon(Icons.check_circle_outline_rounded)
                                 : null,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
