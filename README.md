@@ -10,10 +10,11 @@ A simple boilerplate project that adopts the concepts of simple architecture, mo
 * [x] Routing
 * [x] Logging
 * [x] Encrypted Storage
+* [ ] Permission Handling
 * [ ] Theme Modes (Light and Dark)
 * [ ] Responsive UI (Focus on Mobile)
 * [ ] Splash Screen
-* [ ] Permission Handling
+* [ ] Onboarding Screen (Get Started)
 
 ### Folder Structure
 
