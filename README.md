@@ -128,6 +128,11 @@ Flutter localization uses ARB (Application Resource Bundle) files for translatio
 
 Note: Filenames for all arb files cannot contain underscores other than for describing the locale. The internationalization tool uses underscores to parse out the language, country, and script codes for each ARB file.
 
+## Version
+
+- Flutter 3.16.0
+- Dart 3.2.0
+
 ## Credits
 
 - [Bank of america icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/bank-of-america)
