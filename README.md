@@ -11,6 +11,7 @@ A simple boilerplate project that adopts the concepts of simple architecture, mo
 * [x] Logging
 * [x] Encrypted Storage
 * [ ] Theme Modes (Light and Dark)
+* [ ] Responsive UI (Focus on Mobile)
 * [ ] Splash Screen
 * [ ] Permission Handling
 
