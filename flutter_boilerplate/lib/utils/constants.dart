@@ -7,6 +7,11 @@ class LocalStorageKey {
   static const getStarted = 'getStarted';
 }
 
+class DesignScreenSize {
+  static const iphone15ProMaxWidth = 430.0;
+  static const iphone15ProMaxHeight = 932.0;
+}
+
 // Theme Colors
 enum ColorSeed {
   baseColor('M3 Baseline', Color(0xff6750a4)),
