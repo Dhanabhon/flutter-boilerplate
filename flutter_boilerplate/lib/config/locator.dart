@@ -13,11 +13,11 @@ import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 final GetIt locator = GetIt.I;
 
 Future<void> setupLocator() async {
-  locator.registerLazySingleton<GoRouter>(() => AppRouter.router);
-
+  locator.registerSingleton<GoRouter>(AppRouter.router);
   locator.registerSingleton<AppLogger>(AppLogger());
-  
-  locator.registerFactory<LocalStorageService>(() => LocalStorageService());
+
+  locator.registerLazySingleton<LocalStorageService>(() => LocalStorageService());
+
   locator.registerFactory<ThemeBloc>(() => ThemeBloc());
   locator.registerFactory<LanguageBloc>(() => LanguageBloc());
 }
