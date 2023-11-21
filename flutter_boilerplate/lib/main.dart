@@ -7,7 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_boilerplate/config/theme.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+import 'package:flutter_boilerplate/routes/router.dart';
 import 'package:flutter_boilerplate/blocs/bloc_observer.dart';
 import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 import 'package:flutter_boilerplate/blocs/language/language_state.dart';
