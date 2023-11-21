@@ -6,7 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+import 'package:flutter_boilerplate/routes/router.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -42,7 +42,7 @@ class SettingsPage extends StatelessWidget {
             onPressed: () {
               log.debug("The go back to home button has been pressed!");
 
-              context.go(Routes.rootPath);
+              context.go(Routes.home);
             },
             child: Text(l10n!.goBackHome),
           ),
