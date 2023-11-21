@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+import 'package:flutter_boilerplate/routes/router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
