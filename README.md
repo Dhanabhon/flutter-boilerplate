@@ -1,4 +1,4 @@
-# Flutter Boilerplate
+# Flutter Boilerplate (This repository is under development)
 
 A simple boilerplate project that adopts the concepts of BLoC architecture, modularization, and lightweight.
 
@@ -140,4 +140,9 @@ Note: Filenames for all arb files cannot contain underscores other than for desc
 - [Bank of america icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/bank-of-america)
 - [Thailand icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/thailand)
 
-### Note: This repository is under development.
+
+## License
+
+This application is released under the [MIT license](LICENSE). You can use the code for any purpose, including commercial projects.
+
+[![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
