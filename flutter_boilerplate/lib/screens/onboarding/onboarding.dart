@@ -128,23 +128,23 @@ class OnboardingPage extends StatelessWidget {
             topLeft: Radius.circular(12.0), topRight: Radius.circular(12.0)),
       ),
       builder: (context) {
-        return BlocBuilder<LanguageBloc, LanguageState>(
-          builder: (context, state) {
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    l10n.preferredLanguage,
-                    style: TextStyle(
-                      fontSize:
-                          Theme.of(context).textTheme.headlineSmall?.fontSize,
-                    ),
-                  ),
-                  const SizedBox(height: 16.0),
-                  ListView.separated(
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                l10n.preferredLanguage,
+                style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.headlineSmall?.fontSize,
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              BlocBuilder<LanguageBloc, LanguageState>(
+                builder: (context, state) {
+                  return ListView.separated(
                     shrinkWrap: true,
+                    itemCount: Language.values.length,
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(Language.values[index].name == "english"
@@ -187,12 +187,11 @@ class OnboardingPage extends StatelessWidget {
                     separatorBuilder: (context, index) {
                       return const SizedBox(height: 16.0);
                     },
-                    itemCount: Language.values.length,
-                  ),
-                ],
+                  );
+                },
               ),
-            );
-          },
+            ],
+          ),
         );
       },
     );
