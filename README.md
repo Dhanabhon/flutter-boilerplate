@@ -103,13 +103,16 @@ Explanation of the folder structure:
 ### Installation
 
 Step 1: Clone this repo
-`git clone https://github.com/Dhanabhon/flutter-boilerplate.git`
 
-Step 2: Navigate to the Flutter project:**
-`cd flutter-boilerplate`
+* `git clone https://github.com/Dhanabhon/flutter-boilerplate.git`
+
+Step 2: Navigate to the Flutter project:
+
+* `cd flutter-boilerplate`
 
 Step 3: Execute the following command to get the required dependencies:
-`flutter pub get`
+
+* `flutter pub get`
 
 Setp 4: Run the app on your local device or simulation:
 
@@ -127,7 +130,7 @@ Flutter localization uses ARB (Application Resource Bundle) files for translatio
 
 * Create the template ARB file, assets/locales/LANGUAGE_CODE.arb
 * The tool that generates the localizations class will execute automatically each time the application is run or restarted as part of the build process or force execute for generate use this command:
-`dart run build_runner build`
+* `dart run build_runner build`
 
 Note: Filenames for all arb files cannot contain underscores other than for describing the locale. The internationalization tool uses underscores to parse out the language, country, and script codes for each ARB file.
 
