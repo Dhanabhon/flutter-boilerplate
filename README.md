@@ -139,8 +139,9 @@ Note: Filenames for all arb files cannot contain underscores other than for desc
 
 ## Version
 
-*Flutter 3.16.0
-*Dart 3.2.0
+* Flutter 3.16.0
+* Dart 3.2.0
+* DevTools 2.28.2
 
 ## Credits
 
