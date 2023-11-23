@@ -20,7 +20,7 @@ A simple boilerplate project that adopts the concepts of BLoC architecture, modu
 
 ### Folder Structure
 
-`
+```
 project_name/
   ├── lib/
   │   ├── blocs/
@@ -82,7 +82,7 @@ project_name/
   ├── web/
   ├── pubspec.yaml
   └── README.md
-`
+```
 
 Explanation of the folder structure:
 
@@ -112,12 +112,14 @@ Step 3: Execute the following command to get the required dependencies:
 `flutter pub get`
 
 Setp 4: Run the app on your local device or simulation:
-*`flutter run -d ios`
-*`flutter run -d android`
+
+* `flutter run -d ios`
+* `flutter run -d android`
 
 Step 5 (Optional): If you want to change the app name, try to use the following dependency:
-*[rename](https://pub.dev/packages/rename)
-*[change_app_package_name](https://pub.dev/packages/change_app_package_name)
+
+* [rename](https://pub.dev/packages/rename)
+* [change_app_package_name](https://pub.dev/packages/change_app_package_name)
 
 ## Adding translation file
 
