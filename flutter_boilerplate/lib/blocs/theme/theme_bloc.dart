@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,14 +34,25 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
 
   Future<bool> _isDarkMode() async {
     final isDarkTheme = await getThemePreference();
-    return (isDarkTheme == "dark") ? true : false;
+    final bool isDark;
+
+    if (isDarkTheme == null) {
+      Brightness brightness =
+          SchedulerBinding.instance.platformDispatcher.platformBrightness;
+
+      isDark = (brightness == Brightness.dark) ? true : false;
+    } else {
+      isDark = (isDarkTheme == "dark") ? true : false;
+    }
+
+    _onSetTheme(isDark);
+    return isDark;
   }
 
   Future<void> _onSetTheme(bool isDarkMode) async {
     final prefs = locator.get<LocalStorageService>();
     await prefs.saveDataToStorage(
-        key: LocalStorageKey.themeMode,
-        value: (isDarkMode == true) ? "dark" : "light");
+        key: LocalStorageKey.themeMode, value: (isDarkMode) ? "dark" : "light");
   }
 
   Future<String?> getThemePreference() async {
