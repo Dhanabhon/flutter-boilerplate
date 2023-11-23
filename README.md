@@ -118,6 +118,7 @@ Setp 4: Run the app on your local device or simulation:
 
 * `flutter run -d ios`
 * `flutter run -d android`
+* `flutter run`
 
 Step 5 (Optional): If you want to change the app name, try to use the following dependency:
 
