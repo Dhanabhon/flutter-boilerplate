@@ -30,20 +30,25 @@ class AppRouter {
           return AppScaffold(child: navigator);
         },
         routes: [
-          GoRoute(
-            name: Routes.home,
-            path: Routes.homePath,
-            builder: (context, state) => const HomePage(),
+          AppRoute(
+            Routes.splash,
+            Routes.splashPath,
+            (_) => Container(color: const Color(0xFF272625)),
           ),
-          GoRoute(
-            name: Routes.settings,
-            path: Routes.settingsPath,
-            builder: (context, state) => const SettingsPage(),
+          AppRoute(
+            Routes.home,
+            Routes.homePath,
+            (_) => const HomePage(),
           ),
-          GoRoute(
-            name: Routes.onboarding,
-            path: Routes.onboardingPath,
-            builder: (context, state) => const OnboardingPage(),
+          AppRoute(
+            Routes.settings,
+            Routes.settingsPath,
+            (_) => const SettingsPage(),
+          ),
+          AppRoute(
+            Routes.onboarding,
+            Routes.onboardingPath,
+            (_) => const OnboardingPage(),
           ),
         ],
       ),
@@ -56,9 +61,10 @@ class AppRouter {
 }
 
 class AppRoute extends GoRoute {
-  AppRoute(String path, Widget Function(GoRouterState s) builder,
+  AppRoute(String name, String path, Widget Function(GoRouterState s) builder,
       {List<GoRoute> routes = const [], this.useFade = false})
       : super(
+          name: name,
           path: path,
           routes: routes,
           pageBuilder: (context, state) {
@@ -84,5 +90,6 @@ class AppRoute extends GoRoute {
 
 String? _handleRedirect(BuildContext context, GoRouterState state) {
   // TODO: handle something!
+
   return null;
 }
