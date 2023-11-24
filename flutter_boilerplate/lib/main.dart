@@ -3,21 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:flutter_boilerplate/bootstrap.dart';
+import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/config/theme.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
 import 'package:flutter_boilerplate/routes/router.dart';
+import 'package:flutter_boilerplate/utils/locale_resolution.dart';
 import 'package:flutter_boilerplate/blocs/bloc_observer.dart';
 import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 import 'package:flutter_boilerplate/blocs/language/language_state.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_bloc.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_event.dart';
-import 'package:flutter_boilerplate/utils/locale_resolution.dart';
 import 'package:flutter_boilerplate/blocs/language/language_event.dart';
 
 void main() async {
@@ -32,14 +33,16 @@ void main() async {
   });
 
   initializeApp();
+
   runApp(const MyApp());
+
+  await appBootstrap.bootstrap();
+  FlutterNativeSplash.remove();
 }
 
 void initializeApp() {
   setupLocator();
   Bloc.observer = AppBlocServer();
-
-  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -80,4 +83,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
+AppBootstrap get appBootstrap => locator.get<AppBootstrap>();
 AppLogger get $log => locator.get<AppLogger>();
