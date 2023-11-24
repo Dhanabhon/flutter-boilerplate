@@ -31,7 +31,14 @@ project_name/
   │   │   ├── theme/
   │   │   │   ├── theme_bloc.dart
   │   │   │   ├── theme_event.dart
-  │   │   ├── bloc_observer.dart     
+  │   │   ├── bloc_observer.dart    
+  │   ├── configs/
+  │   │   ├── locator.dart
+  │   │   ├── logger.dart
+  │   │   ├── styles.dart
+  │   │   └── ... 
+  │   ├── routes/
+  │   │   ├── router.dart
   │   ├── screens/
   │   │   ├── home/
   │   │   │   ├── home_screen.dart
@@ -51,6 +58,7 @@ project_name/
   │   │   ├── product.dart
   │   │   └── ...
   │   ├── services/
+  │   │   ├── local_storage.dart
   │   │   ├── api_service.dart
   │   │   ├── database_service.dart
   │   │   └── ...
@@ -62,6 +70,7 @@ project_name/
   │   │   ├── custom_button.dart
   │   │   ├── custom_textfield.dart
   │   │   └── ...
+  │   └── bootstrap.dart
   │   └── main.dart
   ├── assets/
   │   ├── images/
@@ -80,6 +89,7 @@ project_name/
   ├── android/
   ├── ios/
   ├── web/
+  ├── flutter_native_splash.yaml
   ├── pubspec.yaml
   └── README.md
 ```
