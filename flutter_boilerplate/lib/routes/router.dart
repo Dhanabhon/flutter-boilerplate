@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_boilerplate/main.dart';
 import 'package:flutter_boilerplate/screens/app_scaffold.dart';
 import 'package:flutter_boilerplate/screens/page_not_found/page_not_found.dart';
 import 'package:flutter_boilerplate/screens/home/home.dart';
@@ -23,7 +24,7 @@ class Routes {
 class AppRouter {
   static final _router = GoRouter(
     navigatorKey: GlobalKey<NavigatorState>(),
-    initialLocation: Routes.onboardingPath,
+    // initialLocation: Routes.onboardingPath,
     routes: [
       ShellRoute(
         builder: (context, router, navigator) {
@@ -89,7 +90,11 @@ class AppRoute extends GoRoute {
 }
 
 String? _handleRedirect(BuildContext context, GoRouterState state) {
-  // TODO: handle something!
+  if (!appBootstrap.isBootstrapComplete &&
+      state.uri.path != Routes.splashPath) {
+    return Routes.splashPath;
+  }
 
+  $log.debug('[router.dart][_handleRedirect]: Navigate to: ${state.uri.path}');
   return null;
 }
