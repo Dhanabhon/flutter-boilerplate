@@ -151,8 +151,7 @@ Note: Filenames for all arb files cannot contain underscores other than for desc
 ## Changing Splash Screen
 
 * Setting the splash screen where `flutter_native_splash-development.yaml`
-* Run the package using the following command
-* `dart run flutter_native_splash:create --flavor development`
+* Run the package using the following command: `dart run flutter_native_splash:create --flavor development`
 * More infomation [flutter_native_splash](https://pub.dev/packages/flutter_native_splash)
 
 ## Version
