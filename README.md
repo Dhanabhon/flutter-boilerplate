@@ -12,10 +12,10 @@ A simple boilerplate project that adopts the concepts of BLoC architecture, modu
 * ✅ Routing
 * ✅ Logging
 * ✅ Encrypted Storage
+* ✅ Splash Screen
 * 🚧 Permission Handling
 * 🚧 Theme Modes (Light and Dark)
 * 🚧 Responsive UI (Focus on Mobile)
-* 🚧 Splash Screen
 * 🚧 Onboarding Screen (Get Started)
 
 ### Folder Structure
