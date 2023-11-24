@@ -138,6 +138,13 @@ Note: Filenames for all arb files cannot contain underscores other than for desc
 
 * [icons_launcher](https://pub.dev/packages/icons_launcher)
 
+## Changing Splash Screen
+
+* Setting the splash screen where `flutter_native_splash-development.yaml`
+* Run the package using the following command
+* `dart run flutter_native_splash:create --flavor development`
+* More infomation [flutter_native_splash](https://pub.dev/packages/flutter_native_splash)
+
 ## Version
 
 * Flutter 3.16.0
