@@ -13,7 +13,7 @@ import 'package:flutter_boilerplate/utils/constants.dart';
 class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
   ThemeBloc() : super(CustomTheme.lightTheme) {
     on<InitializedTheme>((event, emit) async {
-      $log.debug('[theme_bloc.dart][InitializedTheme]: Intializing...');
+      $log.debug('[theme_bloc.dart][InitializedTheme]: Initializing...');
 
       if (await _isDarkMode()) {
         emit(CustomTheme.darkTheme);
