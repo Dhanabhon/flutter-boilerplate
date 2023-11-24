@@ -4,7 +4,7 @@ A simple boilerplate project that adopts the concepts of BLoC architecture, modu
 
 ## Key Features
 
-* ✅ Material 3 Design (As of the Flutter 3.16 release, Material 3 is enabled by default.)
+* ✅ Material Design 3 (As of the Flutter 3.16 release, Material 3 is enabled by default.)
 * ✅ Simple layered architecture
 * ✅ State Management with BLoC
 * ✅ Dependency injection with watch_it (aka get_it)
@@ -13,10 +13,10 @@ A simple boilerplate project that adopts the concepts of BLoC architecture, modu
 * ✅ Logging
 * ✅ Encrypted Storage
 * ✅ Splash Screen
-* 🚧 Permission Handling
 * 🚧 Theme Modes (Light and Dark)
-* 🚧 Responsive UI (Focus on Mobile)
 * 🚧 Onboarding Screen (Get Started)
+* 🚧 Responsive UI (Focus on Mobile)
+* 🚧 Permission Handling
 
 ### Folder Structure
 
