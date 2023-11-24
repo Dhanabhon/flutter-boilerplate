@@ -4,8 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:flutter_boilerplate/configs/locator.dart';
-import 'package:flutter_boilerplate/configs/logger.dart';
+import 'package:flutter_boilerplate/main.dart';
 import 'package:flutter_boilerplate/routes/router.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -14,7 +13,6 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final log = locator.get<AppLogger>();
 
     return Scaffold(
       appBar: AppBar(
@@ -22,25 +20,14 @@ class SettingsPage extends StatelessWidget {
       ),
       body: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          DropdownButton<Locale>(
-            items: AppLocalizations.supportedLocales
-                .map<DropdownMenuItem<Locale>>((Locale value) {
-              return DropdownMenuItem<Locale>(
-                value: value,
-                child: Text(value.languageCode),
-              );
-            }).toList(),
-            onChanged: (locale) {},
-          ),
+          Text(AppLocalizations.of(context)!.darkTheme),
           const SizedBox(
             height: 16,
           ),
           ElevatedButton(
             onPressed: () {
-              log.debug("The go back to home button has been pressed!");
+              $log.debug("The go back to home button has been pressed!");
 
               context.go(Routes.home);
             },
@@ -49,14 +36,5 @@ class SettingsPage extends StatelessWidget {
         ],
       )),
     );
-  }
-}
-
-class SettingsPace extends StatelessWidget {
-  const SettingsPace({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
