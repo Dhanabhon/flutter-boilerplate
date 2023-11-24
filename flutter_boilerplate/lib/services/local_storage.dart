@@ -1,12 +1,9 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-import 'package:flutter_boilerplate/config/locator.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
+import 'package:flutter_boilerplate/main.dart';
 
 class LocalStorageService {
   FlutterSecureStorage? _preferences;
-
-  final log = locator.get<AppLogger>();
 
   LocalStorageService._internal();
 
@@ -17,7 +14,7 @@ class LocalStorageService {
   Future<FlutterSecureStorage?> getInstance() async {
     _preferences ??= const FlutterSecureStorage();
 
-    log.debug('[local_storage.dart][getInstance]: Initializing...');
+    $log.debug('[local_storage.dart][getInstance]: Initializing...');
 
     return _preferences;
   }
@@ -25,8 +22,8 @@ class LocalStorageService {
   Future<void> saveDataToStorage({required String key, String? value}) async {
     FlutterSecureStorage? prefs = await getInstance();
     await prefs?.write(key: key, value: value);
-    
-    log.debug(
+
+    $log.debug(
         '[local_storage.dart][saveDataToStorage]: Key: {$key}, Value: {$value}');
   }
 
@@ -34,7 +31,7 @@ class LocalStorageService {
     FlutterSecureStorage? prefs = await getInstance();
     String? value = await prefs?.read(key: key);
 
-    log.debug(
+    $log.debug(
         '[local_storage.dart][readDataFromStorage]: Key: {$key}, Value: {$value}');
 
     return value;
@@ -44,7 +41,7 @@ class LocalStorageService {
     FlutterSecureStorage? prefs = await getInstance();
     await prefs?.delete(key: key);
 
-    log.debug(
+    $log.debug(
         '[local_storage.dart][deleteDataInStorage]: Key: {$key} has been deleted.');
   }
 
@@ -52,6 +49,7 @@ class LocalStorageService {
     FlutterSecureStorage? prefs = await getInstance();
     await prefs?.deleteAll();
 
-    log.debug('[local_storage.dart][deleteAllDataInStorage]: Delete all data.');
+    $log.debug(
+        '[local_storage.dart][deleteAllDataInStorage]: Delete all data.');
   }
 }

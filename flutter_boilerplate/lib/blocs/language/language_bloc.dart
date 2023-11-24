@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:flutter_boilerplate/main.dart';
 import 'package:flutter_boilerplate/config/locator.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:flutter_boilerplate/blocs/language/language_event.dart';
@@ -13,15 +13,13 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     on<GetLanguage>(_onGetLanguage);
   }
 
-  final log = locator.get<AppLogger>();
-
   Future<void> _onChangedLanguage(
       ChangedLanguage event, Emitter<LanguageState> emit) async {
     final currentLanguage = event.selectedLanguage;
     final previousLanguage = await getLanguagePreference();
 
     if (currentLanguage == previousLanguage) {
-      log.debug(
+      $log.debug(
           '[language_bloc.dart][_onChangedLanguage]: The current language is the same as the previous language.');
       return;
     }
@@ -50,7 +48,7 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     String? language =
         await prefs.readDataFromStorage(key: LocalStorageKey.language);
 
-    log.debug(
+    $log.debug(
         '[language_bloc.dart][getLanguagePreference]: Language: $language');
 
     return (language == 'english') ? Language.english : Language.thai;

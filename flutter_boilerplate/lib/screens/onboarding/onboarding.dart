@@ -7,12 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_boilerplate/gen/assets.gen.dart';
 
+import 'package:flutter_boilerplate/main.dart';
 import 'package:flutter_boilerplate/widgets/custom_elevated_button.dart';
 import 'package:flutter_boilerplate/blocs/language/language_bloc.dart';
 import 'package:flutter_boilerplate/blocs/language/language_event.dart';
 import 'package:flutter_boilerplate/blocs/language/language_state.dart';
-import 'package:flutter_boilerplate/config/locator.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -22,7 +21,6 @@ class OnboardingPage extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(360, 690));
 
     final l10n = AppLocalizations.of(context)!;
-    final log = locator.get<AppLogger>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -36,7 +34,7 @@ class OnboardingPage extends StatelessWidget {
             ),
             child: OutlinedButton(
               onPressed: () {
-                log.debug(
+                $log.debug(
                     '[onboarding.dart]: Change language button has been pressed!');
 
                 showLanguageBottomSheet(context);
@@ -101,7 +99,7 @@ class OnboardingPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: CustomElevatedButton(
                 onPressed: () {
-                  log.debug(
+                  $log.debug(
                       '[onboarding.dart]: Get Started Button has been pressed!');
 
                   // TODO: Save the get started status into local storage
@@ -119,7 +117,6 @@ class OnboardingPage extends StatelessWidget {
 
   void showLanguageBottomSheet(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final log = locator.get<AppLogger>();
 
     showModalBottomSheet(
       context: context,
@@ -155,7 +152,7 @@ class OnboardingPage extends StatelessWidget {
                                 ? Colors.grey[400]?.withOpacity(0.05)
                                 : null,
                         onTap: () {
-                          log.debug(
+                          $log.debug(
                               '[onboarding.dart][showModalBottomSheet]: Selected item: ${Language.values[index].name}');
 
                           context.read<LanguageBloc>().add(ChangedLanguage(
