@@ -3,6 +3,7 @@ import 'package:watch_it/watch_it.dart';
 
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:flutter_boilerplate/bootstrap.dart';
 import 'package:flutter_boilerplate/config/logger.dart';
 import 'package:flutter_boilerplate/routes/router.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
@@ -16,6 +17,7 @@ Future<void> setupLocator() async {
   locator.registerSingleton<GoRouter>(AppRouter.router);
   locator.registerSingleton<AppLogger>(AppLogger());
 
+  locator.registerLazySingleton<AppBootstrap>(() => AppBootstrap());
   locator.registerLazySingleton<LocalStorageService>(() => LocalStorageService());
 
   locator.registerFactory<ThemeBloc>(() => ThemeBloc());
