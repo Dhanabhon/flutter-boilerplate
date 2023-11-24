@@ -31,5 +31,9 @@
   "preferredLanguage": "Preferred Language",
   "@preferredLanguage": {
     "description": "Title text of bottom sheet"
+  },
+  "darkTheme": "Dark Theme",
+  "@darkTheme": {
+    "description": "Text of the dark settings"
   }
 }

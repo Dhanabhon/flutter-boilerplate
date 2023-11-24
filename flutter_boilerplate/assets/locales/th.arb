@@ -7,6 +7,6 @@
   "settings": "ตั้งค่า",
   "onboardingText": "โลเล็ม อิปซัม คือเนื้อหาจำลองแบบเรียบ ๆ",
   "getStartedText": "เริ่มต้นใช้งาน",
-  "preferredLanguage": "ภาษาที่ต้องการ"
+  "preferredLanguage": "ภาษาที่ต้องการ",
+  "darkTheme": "ธีมมืด"
 }
-  
