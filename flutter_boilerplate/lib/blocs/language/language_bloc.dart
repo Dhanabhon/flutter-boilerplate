@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_boilerplate/main.dart';
-import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/configs/locator.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:flutter_boilerplate/blocs/language/language_event.dart';

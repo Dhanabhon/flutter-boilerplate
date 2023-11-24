@@ -4,7 +4,7 @@ import 'package:watch_it/watch_it.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_boilerplate/bootstrap.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
+import 'package:flutter_boilerplate/configs/logger.dart';
 import 'package:flutter_boilerplate/routes/router.dart';
 import 'package:flutter_boilerplate/services/local_storage.dart';
 import 'package:flutter_boilerplate/blocs/theme/theme_bloc.dart';

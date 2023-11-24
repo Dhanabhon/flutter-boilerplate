@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_boilerplate/config/styles.dart';
-import 'package:flutter_boilerplate/config/theme.dart';
+import 'package:flutter_boilerplate/configs/styles.dart';
+import 'package:flutter_boilerplate/configs/theme.dart';
 import 'package:flutter_boilerplate/widgets/app_scroll_behavior.dart';
 
 class AppScaffold extends StatelessWidget {

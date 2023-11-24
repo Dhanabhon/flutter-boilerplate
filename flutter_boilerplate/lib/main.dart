@@ -9,9 +9,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_boilerplate/bootstrap.dart';
-import 'package:flutter_boilerplate/config/logger.dart';
-import 'package:flutter_boilerplate/config/theme.dart';
-import 'package:flutter_boilerplate/config/locator.dart';
+import 'package:flutter_boilerplate/configs/logger.dart';
+import 'package:flutter_boilerplate/configs/theme.dart';
+import 'package:flutter_boilerplate/configs/locator.dart';
 import 'package:flutter_boilerplate/routes/router.dart';
 import 'package:flutter_boilerplate/utils/locale_resolution.dart';
 import 'package:flutter_boilerplate/blocs/bloc_observer.dart';

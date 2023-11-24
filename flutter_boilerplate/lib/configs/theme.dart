@@ -7,7 +7,7 @@ class CustomTheme {
   static ColorSeed colorSelected = ColorSeed.baseColor;
   static ThemeMode themeMode = ThemeMode.system;
 
-  static bool useLightMode(BuildContext context) {
+  static bool isLightMode(BuildContext context) {
     switch (themeMode) {
       case ThemeMode.system:
         return View.of(context).platformDispatcher.platformBrightness ==
