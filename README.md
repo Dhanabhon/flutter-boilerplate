@@ -17,6 +17,7 @@ A simple boilerplate project that adopts the concepts of BLoC architecture, modu
 * 🚧 Onboarding Screen (Get Started)
 * 🚧 Responsive UI (Focus on Mobile)
 * 🚧 Permission Handling
+* 🚧 Showcase view (Introduce App Features)
 
 ### Folder Structure
 
